@@ -1,4 +1,4 @@
-apt-get install -y mc ncdu
+apt-get install -y mc ncdu htop sysstat iftop glances
 
 sudo apt-get update
 
