@@ -8,6 +8,8 @@ sudo apt-get install -y \
     curl \
     software-properties-common
 
+echo 'deb [arch=amd64] https://download.docker.com/linux/ubuntu artful stable' >> /etc/apt/sources.list.d/docker.list
+
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 sudo apt-key fingerprint 0EBFCD88
@@ -25,4 +27,6 @@ sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-c
 
 sudo chmod +x /usr/local/bin/docker-compose
 
-ssh-keygen -t rsa -b 4096 -N "" -f ~/.ssh/id_rsa
+if [ ! -f ~/.ssh/id_rsa ]; then
+    ssh-keygen -t rsa -b 4096 -N "" -f ~/.ssh/id_rsa
+fi
