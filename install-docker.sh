@@ -30,3 +30,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 if [ ! -f ~/.ssh/id_rsa ]; then
     ssh-keygen -t rsa -b 4096 -N "" -f ~/.ssh/id_rsa
 fi
+
+echo "-----------------------"
+
+cat ~/.ssh/id_rsa.pub
