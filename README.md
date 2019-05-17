@@ -25,3 +25,9 @@ sudo apt-get install -y docker-ce=18.06.3~ce~3-0~ubuntu
 curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ```
+
+## CLI Promt with colored username and host (Like in hetzner)
+```
+export PROMPT='${ret_status} $fg[red]%}$USER$fg[yellow]%}@$fg[cyan]%}%m %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+```
+Append to `~/.ssh/zshrc` file
