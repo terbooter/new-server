@@ -31,3 +31,14 @@ chmod +x /usr/local/bin/docker-compose
 export PROMPT='${ret_status} $fg[red]%}$USER$fg[yellow]%}@$fg[cyan]%}%m %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
 ```
 Append to `~/.ssh/zshrc` file
+
+## Disable SSH by password
+* add pub keys to `~/.ssh/authorized_keys`
+* check you are able to SSH without password
+* disable SSH by password. edit `/etc/ssh/sshd_config`
+```
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+UsePAM no
+```
+* `sudo systemctl restart ssh`
