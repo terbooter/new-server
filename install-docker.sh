@@ -21,7 +21,11 @@ sudo add-apt-repository \
 
 sudo apt-get update
 
-sudo apt-get install -y docker-ce=18.06.3~ce~3-0~ubuntu
+# Old production version
+#sudo apt-get install -y docker-ce=18.06.3~ce~3-0~ubuntu
+
+# New production version
+sudo apt-get install docker-ce=5:19.03.5~3-0~ubuntu-bionic docker-ce-cli=5:19.03.5~3-0~ubuntu-bionic containerd.io
 
 sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 

@@ -42,3 +42,19 @@ ChallengeResponseAuthentication no
 UsePAM no
 ```
 * `sudo systemctl restart ssh`
+
+## Set locale
+* https://www.mvoronin.pro/ru/blog/post-40
+* https://stackoverflow.com/questions/55673886/what-is-the-difference-between-c-utf-8-and-en-us-utf-8-locales
+* locale-gen en_US.UTF-8
+* edit `/etc/default/locale`
+* Put minimal config
+```
+LANG=C.UTF-8
+LANGUAGE=en_US
+LC_ALL=C.UTF-8
+```
+
+## Production docker version
+docker -v
+Docker version 19.03.5, build 633a0ea838
