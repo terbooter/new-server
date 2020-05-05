@@ -41,6 +41,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 mkdir -p ~/.docker
 cp config.json ~/.docker
 
+# Install oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 if [ ! -f ~/.ssh/id_rsa ]; then
     ssh-keygen -t rsa -b 4096 -N "" -f ~/.ssh/id_rsa
