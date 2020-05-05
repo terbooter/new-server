@@ -47,6 +47,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # Append custom config to zsh
 cat zshrc-append.txt >> ~/.zshrc
 
+# Remove news on login
+rm /etc/update-motd.d/10-help-text
+rm /etc/update-motd.d/50-motd-news
+
+
 if [ ! -f ~/.ssh/id_rsa ]; then
     ssh-keygen -t rsa -b 4096 -N "" -f ~/.ssh/id_rsa
 fi
