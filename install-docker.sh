@@ -25,15 +25,24 @@ sudo apt-get update
 #sudo apt-get install -y docker-ce=18.06.3~ce~3-0~ubuntu
 
 # New production version
-sudo apt-get install docker-ce=5:19.03.5~3-0~ubuntu-bionic docker-ce-cli=5:19.03.5~3-0~ubuntu-bionic containerd.io
+sudo apt-get install -y \
+    docker-ce=5:19.03.5~3-0~ubuntu-bionic \
+    docker-ce-cli=5:19.03.5~3-0~ubuntu-bionic \
+    containerd.io
 
 sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 
 sudo chmod +x /usr/local/bin/docker-compose
 
+mkdir -p ~/.docker
+cp config.json ~/.docker
+
+
 if [ ! -f ~/.ssh/id_rsa ]; then
     ssh-keygen -t rsa -b 4096 -N "" -f ~/.ssh/id_rsa
 fi
+
+touch ~/.ssh/authorized_keys
 
 echo "-----------------------"
 

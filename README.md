@@ -58,3 +58,6 @@ LC_ALL=C.UTF-8
 ## Production docker version
 docker -v
 Docker version 19.03.5, build 633a0ea838
+
+## Set UTC timezone
+`sudo timedatectl set-timezone UTC`
