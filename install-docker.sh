@@ -44,6 +44,9 @@ cp config.json ~/.docker
 # Install oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# Append custom config to zsh
+cat zshrc-append.txt >> ~/.zshrc
+
 if [ ! -f ~/.ssh/id_rsa ]; then
     ssh-keygen -t rsa -b 4096 -N "" -f ~/.ssh/id_rsa
 fi
