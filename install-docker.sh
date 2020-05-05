@@ -6,7 +6,11 @@ sudo apt-get install -y \
     apt-transport-https \
     ca-certificates \
     curl \
-    software-properties-common
+    software-properties-common \
+    zsh
+
+# Make zsh default shell
+chsh -s $(which zsh)
 
 echo 'deb [arch=amd64] https://download.docker.com/linux/ubuntu artful stable' >> /etc/apt/sources.list.d/docker.list
 
